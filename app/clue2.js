@@ -1,3 +1,5 @@
+// accomplice
+
 // 1. Within the factorials function, write a loop that begins at 1 and multiplies every consecutive
 // number up to and including the given number(num). Return the total after the loop completes.
 // Example:

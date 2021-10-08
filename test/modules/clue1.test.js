@@ -36,6 +36,16 @@ describe("clue1", () => {
     })
   })
 
+  describe("5. arrayToString Function", () => {
+    let arrayToString = window["arrayToString"]
+    it("returns an string", () => {
+      chai.assert.isString(arrayToString(['at', 'the', 'Singing', 'House', 'Down', 'Under']), "The return type must be an string.")
+    })
+    it("returns the array with only the elements within the range", () => {
+      chai.assert.equal(arrayToString(['at', 'the', 'Singing', 'House', 'Down', 'Under']), 'at the Singing House Down Under', "Make sure to add the ' ' character between each word")
+    })
+  })
+})
 
   // describe("2. largestNum Function", () => {
   //   let largestNum = window["largestNum"]
@@ -94,4 +104,3 @@ describe("clue1", () => {
   //     chai.assert.strictEqual(bandMemberDetails("John"), "Johnny P is in the band and plays the sax", "The .includes() method could help with this challenge.")
   //   })
   // })
-})

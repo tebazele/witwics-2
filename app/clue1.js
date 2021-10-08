@@ -32,6 +32,7 @@ function reverseRearranger(arr) {
   // TODO YOUR CODE HERE
 }
 
+
 // Looks like we almost got it, but it as it turns out most of this message is nonsense, we need to be able to get a copy of only a portion of the message
 // 4. write a function that will take in an array as well as two indexes (start and end), and return the portion of the array within those indexes
 // Example:
@@ -44,9 +45,15 @@ function arrayPortion(arr, start, end){
 
 
 // ANCHOR write a join method
+// Final step we have the message broken up into words, we need to put it back into a normal sentence
+// 5. Write a function that takes in an array and returns the array as a string, make sure when it is put back together to add the ' ' character back in.
+// Example:
+// input: ['This', 'is', 'a', 'split', 'sentence.']
+// output: 'This is a split sentence.'
 
-
-
+function arrayToString(arr){
+  
+}
 
 
 // ------------------------------------------
