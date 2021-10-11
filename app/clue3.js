@@ -43,7 +43,7 @@ function sortPlates(arr) {
 
 // --------------------------------
 
-// Hmm... upon further investigation it looks like we have plates from all over the world here, might be easier if we grouped them aphabeticaly by country.
+// Hmm... upon further investigation it looks like we have plates from all over the world here, might be easier if we grouped them alphabetically by country.
 
 // 4. Write a function that will take in an array of objects and sort them by the value of their 'country' property.
 // Example:

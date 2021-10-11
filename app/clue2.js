@@ -2,14 +2,14 @@
 
 //-------------------------------------------
 
-// First things first we need to narrow down portions of our files to get the people who are in the area, our filing system is a mess though, we need to know which cabnet the files are in.
+// First things first we need to narrow down portions of our files to get the people who are in the area, our filing system is a mess though, we need to know which cabinet the files are in.
 
 // 1. Write function that will take in an array and and an element that will return the elements index within the array, if it is not found throw an error
 // EXAMPLE:
-// input: ['Argentina', 'Armenia', 'Aurba', 'Australia', 'Austria'], 'Australia'
+// input: ['Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria'], 'Australia'
 // output: 4
 
-function returnIndex(arr, str){
+function returnIndex(arr, str) {
   // TODO your code here
 }
 
@@ -17,12 +17,12 @@ function returnIndex(arr, str){
 
 // Now that we have the right cabinet, we need to see if the name is within that file system, a simple bool value will suffice, the interns can locate the actual file later.
 
-// 2. Write a function that will take in an array and a string, it will return a boolean value if the stirng is within the array.
+// 2. Write a function that will take in an array and a string, it will return a boolean value if the string is within the array.
 // Example: 
 // input: ['Martin', 'Grace', 'Armando', 'Joe', 'Susan', 'Ted'], 'Joe'
 // output: true
 
-function hasName(arr, name){
+function hasName(arr, name) {
 
 }
 

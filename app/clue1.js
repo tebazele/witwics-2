@@ -2,7 +2,7 @@
 
 // A coded message has been sent to her associate that we need to decipher, this time though its much craftier, we breaking up the message into individual words in an array so we can better manipulate it.
 
-// 1. Write a function that will take in a string (str), and return an array of strings that contain only the words, seperated where there is a ' ' character.
+// 1. Write a function that will take in a string (str), and return an array of strings that contain only the words, separated where there is a ' ' character.
 // input: 'This is a split sentence.'
 // output: [ 'This', 'is', 'a', 'split', 'sentence.']
 
@@ -39,7 +39,7 @@ function reverseRearranger(arr) {
 // input: ['This', 'is', 'a', 'split', 'sentence.'] , 1, 3
 // output: ['is', 'a', 'split']
 // TODO this should not allow destructive methods
-function arrayPortion(arr, start, end){
+function arrayPortion(arr, start, end) {
   // TODO YOUR CODE HERE
 }
 
@@ -51,7 +51,7 @@ function arrayPortion(arr, start, end){
 // input: ['This', 'is', 'a', 'split', 'sentence.']
 // output: 'This is a split sentence.'
 
-function arrayToString(arr){
+function arrayToString(arr) {
   // TODO YOUR CODE HERE
 }
 

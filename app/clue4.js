@@ -39,7 +39,7 @@ function joinArrays(arr1, arr2) {
 
 // ---------------------------------------------
 
-// Oh boy, it looks like this purchase could have been multiple items, lets total up the recipt so we can compare it to other collecitons of items.
+// Oh boy, it looks like this purchase could have been multiple items, lets total up the receipt so we can compare it to other collections of items.
 
 // 4. Write a function that will take in an array of items and return the total of their prices. (Hint: use the reduce method)
 // Example:
@@ -52,7 +52,7 @@ function totalReceipt(arr) {
 
 // ---------------------------------------------
 
-// Itterating over all these arrays is really slowing us down, lets try to reduce the amount of data we need to process by converting our list of disguises into something we can more directly look up by disguise name.
+// Iterating over all these arrays is really slowing us down, lets try to reduce the amount of data we need to process by converting our list of disguises into something we can more directly look up by disguise name.
 
 // 5. Write a function that will convert an array of objects into a dictionary. Where the key is the name of the item and the value is the price.
 // Example:
