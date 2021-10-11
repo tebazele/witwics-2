@@ -8,7 +8,7 @@ import './modules/clue5.test.js'
 const runner = mocha.run()
 let solved = 0
 runner.on("suite end", async (suite) => {
-  let solution = JSON.parse(localStorage.getItem('witwics1')) || {}
+  let solution = JSON.parse(localStorage.getItem('witwics2')) || {}
   if (!suite.title.startsWith('clue')) { return }
   solution = await checkSolution(solution, suite)
   if (!solution[suite.title].completed) { return }
@@ -54,10 +54,10 @@ async function checkSolution(solution, suite) {
 
   if (solution[suite.title].completed && !solution[suite.title].img) {
     let clue = await setClueData(suite, solution[suite.title])
-    solution = JSON.parse(localStorage.getItem('witwics1')) || {}
+    solution = JSON.parse(localStorage.getItem('witwics2')) || {}
     solution[suite.title] = clue
   }
-  localStorage.setItem('witwics1', JSON.stringify(solution))
+  localStorage.setItem('witwics2', JSON.stringify(solution))
   return solution
 }
 

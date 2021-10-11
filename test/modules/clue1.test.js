@@ -1,6 +1,6 @@
 describe("clue1", () => {
   describe("1. stringBreaker Function", () => {
-    let stringBreaker = window["rearranger"]
+    let stringBreaker = window["stringBreaker"]
     it("returns an array", () => {
       chai.assert.isArray(stringBreaker('Under at the House Down'), "The return type must be an array.")
     })
