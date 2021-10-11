@@ -13,6 +13,8 @@ function platesByCharacters(arr, num) {
 
 // --------------------------------
 
+// This car has been used in several crimes before, we need to be able to look at the plates that have multiple citations, the more citations the more likely its our car.
+
 // 2. Write a function that will take in an array of objects and filter OUT any objects with a citation count the provided number or less.
 // Example:
 // input: [{plate: 'IBSTOLEN', citations: 2 }, {plate: 'NOTMINE', citations: 1 }, {plate: 'DRIVNFAST', citations: 3 }, {plate: 'GETAWAY', citations: 6 }, {plate: 'HEIST', citations: 0 }, {plate: 'CARGOFAST', citations: 1 }, {plate: 'ETMYDST', citations: 7 }]
@@ -28,6 +30,8 @@ function filterPlatesByCitations(arr, num) {
 
 // --------------------------------
 
+// Alright time to hit the streets! To best break up the team lets have them take each plate alphabetically.
+
 // 3. Write a function that will take in an array and return its contents sorted alphabetically. (hint: use the sort method)
 // Example:
 // input: ['NOTMINE','GETAWAY','ETMYDST']
@@ -39,6 +43,8 @@ function sortPlates(arr) {
 
 // --------------------------------
 
+// Hmm... upon further investigation it looks like we have plates from all over the world here, might be easier if we grouped them aphabeticaly by country.
+
 // 4. Write a function that will take in an array of objects and sort them by the value of their 'country' property.
 // Example:
 // input: [{country: 'AUS', plate:'NOTMINE'},{country: 'USA', plate:'GETAWAY'},{country: 'CAN', plate:'ETMYDST'}]
@@ -49,6 +55,8 @@ function sortPlatesByCountry(arr) {
 }
 
 // --------------------------------
+
+// We might have found it, lets see all those bad drivers in order to cross-reference the plates with the citations.
 
 // 5. Write a function that will sort plates by number of citations they have recieved.
 // Example:
