@@ -2,7 +2,7 @@
 
 // We know within the system that the getaway cars plate has 7 characters, lets start by reducing all the plates in the system to only include ones with 7 characters, and while we are at it, lets optimize the process in case we ever need it again, so it can take in any plate length
 
-// 1. Write a function that will take in an array and return an array of only strings that have the provided number characters.
+// 1. Write a function that will take in an array and return an array of only strings that have the provided number characters. (hint: filter)
 // Example: 
 // input: ['IBSTOLEN','NOTMINE','DRIVNFAST','GETAWAY','HEIST','CARGOFAST','ETMYDST'], 7
 // output: ['NOTMINE','GETAWAY','ETMYDST']
@@ -28,7 +28,7 @@ function filterPlatesByCitations(arr, num) {
 
 // --------------------------------
 
-// 3. Write a function that will take in an array and return its contents sorted alphabetically.
+// 3. Write a function that will take in an array and return its contents sorted alphabetically. (hint: use the sort method)
 // Example:
 // input: ['NOTMINE','GETAWAY','ETMYDST']
 // output: ['ETMYDST','GETAWAY','NOTMINE']
