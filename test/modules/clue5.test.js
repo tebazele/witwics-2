@@ -39,10 +39,10 @@ describe("clue5", () => {
       chai.assert.isTrue(hasEscapeTunnel(propertyTest))
     })
     it('returns false if the property does not have an escape tunnel', () => {
-
       chai.assert.isFalse(hasEscapeTunnel(noEscape))
     })
   })
+  
   describe('2. hasEscapeTunnelSafe', () => {
     const hasEscapeTunnelSafe = window['hasEscapeTunnelSafe']
     it('returns a boolean', () => {
