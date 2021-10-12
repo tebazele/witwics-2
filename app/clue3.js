@@ -2,12 +2,30 @@
 
 // We know within the system that the getaway cars plate has 7 characters, lets start by reducing all the plates in the system to only include ones with 7 characters, and while we are at it, lets optimize the process in case we ever need it again, so it can take in any plate length
 
-// 1. Write a function that will take in an array and return an array of only strings that have the provided number characters. (hint: filter)
+// 1. Write a function that will take in an array and return an array where all of the strings have 7 characters. (hint: filter)
 // Example: 
-// input: ['IBSTOLEN','NOTMINE','DRIVNFAST','GETAWAY','HEIST','CARGOFAST','ETMYDST'], 7
-// output: ['NOTMINE','GETAWAY','ETMYDST']
+// input: 
+/*
+  [
+    'IBSTOLEN',
+    'NOTMINE',
+    'DRIVNFAST',
+    'GETAWAY',
+    'HEIST',
+    'CARGOFAST',
+    'ETMYDST'
+  ]
+*/
+// output: 
+/*
+  [
+    'NOTMINE', 
+    'GETAWAY', 
+    'ETMYDST'
+  ]
+*/
 
-function platesByCharacters(arr, num) {
+function platesByCharacters(arr) {
   // TODO YOUR CODE HERE
 }
 
@@ -15,18 +33,32 @@ function platesByCharacters(arr, num) {
 
 // This car has been used in several crimes before, we need to be able to look at the plates that have multiple citations, the more citations the more likely its our car.
 
-// 2. Write a function that will take in an array of objects and filter OUT any objects with a citation count the provided number or less.
-// Example:
-// input: [{plate: 'IBSTOLEN', citations: 2 }, {plate: 'NOTMINE', citations: 1 }, {plate: 'DRIVNFAST', citations: 3 }, {plate: 'GETAWAY', citations: 6 }, {plate: 'HEIST', citations: 0 }, {plate: 'CARGOFAST', citations: 1 }, {plate: 'ETMYDST', citations: 7 }]
-// output: [{plate: 'DRIVNFAST', citations: 3 }, {plate: 'GETAWAY', citations: 6 }, {plate: 'ETMYDST', citations: 7 }]
+// 2. Write a function that will take in an array of objects and filter OUT to KEEP all plates that have at least the total numberOfCitations.
 
-function filterPlatesByCitations(arr, num) {
+// Example:
+// input: 
+/* [
+    {plate: 'IBSTOLEN', citations: 2 },
+    {plate: 'NOTMINE', citations: 1 },
+    {plate: 'DRIVNFAST', citations: 3 },
+    {plate: 'GETAWAY', citations: 6 },
+    {plate: 'HEIST', citations: 0 },
+    {plate: 'CARGOFAST', citations: 1 },
+    {plate: 'ETMYDST', citations: 7 }
+   ],
+   3
+*/
+// output: 
+/* [
+    {plate: 'DRIVNFAST', citations: 3 }, 
+    {plate: 'GETAWAY', citations: 6 }, 
+    {plate: 'ETMYDST', citations: 7 }
+   ]
+*/
+
+function filterPlatesByCitations(plates, numberOfCitations) {
   // TODO YOUR CODE HERE
 }
-
-
-
-
 
 // --------------------------------
 
@@ -43,26 +75,57 @@ function sortPlates(arr) {
 
 // --------------------------------
 
-// Hmm... upon further investigation it looks like we have plates from all over the world here, might be easier if we grouped them alphabetically by country.
+// We might have found it, lets see all those bad drivers in order to cross-reference the plates with the citations.
 
-// 4. Write a function that will take in an array of objects and sort them by the value of their 'country' property.
+// 4. Write a function that will sort plates by number of citations they have received.
+
 // Example:
-// input: [{country: 'AUS', plate:'NOTMINE'},{country: 'USA', plate:'GETAWAY'},{country: 'CAN', plate:'ETMYDST'}]
-// output: [{country: 'AUS', plate:'NOTMINE'},{country: 'CAN', plate:'ETMYDST'},{country: 'USA', plate:'GETAWAY'}]
 
-function sortPlatesByCountry(arr) {
+// input: 
+/* [
+    {country: 'CAN', plate:'NOTMINE', citations: 2},
+    {country: 'USA', plate:'GETAWAY', citations: 1},
+    {country: 'AUS', plate:'ETMYDST', citations: 13}
+   ]
+*/
+// output: 
+/*
+  [
+    {country: 'AUS', plate:'ETMYDST', citations: 13},
+    {country: 'CAN', plate:'NOTMINE', citations: 2}, 
+    {country: 'USA', plate:'GETAWAY', citations: 1}
+  ]
+*/
+
+function sortPlatesByCitations(arr) {
   // TODO YOUR CODE HERE
 }
 
 // --------------------------------
 
-// We might have found it, lets see all those bad drivers in order to cross-reference the plates with the citations.
+// Hmm... upon further investigation it looks like we have plates from all over the world here, might be easier if we ordered them by their Country.
 
-// 5. Write a function that will sort plates by number of citations they have recieved.
+// 5. Write a function that will take in an array of objects and sort them by the value of their country property. 
+
+// hint: Sorting by strings JavaScript
+
 // Example:
-// input: [{country: 'CAN', plate:'NOTMINE', citations: 2},{country: 'USA', plate:'GETAWAY', citations: 1},{country: 'AUS', plate:'ETMYDST', citations: 13}]
-// output: [{country: 'AUS', plate:'ETMYDST', citations: 13},{country: 'CAN', plate:'NOTMINE', citations: 2}, {country: 'USA', plate:'GETAWAY', citations: 1}]
+// input: 
+/* [
+    { country: 'AUS', plate: 'NOTMINE' },
+    { country: 'USA', plate: 'GETAWAY' },
+    { country: 'CAN', plate: 'ETMYDST' }
+   ]
+*/
+// output: 
+/*
+  [
+    { country: 'AUS', plate: 'NOTMINE' },
+    { country: 'CAN', plate: 'ETMYDST' },
+    { country: 'USA', plate: 'GETAWAY' },
+  ]
+*/
 
-function sortPlatesByCitations(arr) {
+function sortPlatesByCountry(arr) {
   // TODO YOUR CODE HERE
 }

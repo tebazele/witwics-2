@@ -31,8 +31,8 @@ describe("clue1", () => {
     it("returns an array", () => {
       chai.assert.isArray(arrayPortion([3, 4]), "The return type must be an array.")
     })
-    it("returns the array with only the elements within the range", () => {
-      chai.assert.includeOrderedMembers(arrayPortion(['where','the', 'Under', 'at', 'the', 'House', 'Down', 'people', 'sing'], 2, 6), ['Under', 'at', 'the', 'House', 'Down'], "Make sure to include all requested indexes")
+    it("The end is inclusive", () => {
+      chai.assert.includeOrderedMembers(arrayPortion(['where', 'the', 'Under', 'at', 'the', 'House', 'Down', 'people', 'sing'], 2, 6), ['Under', 'at', 'the', 'House', 'Down'], "Be sure to include all of the words between the start and end")
     })
   })
 

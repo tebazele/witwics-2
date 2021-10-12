@@ -1,0 +1,7 @@
+{
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeLens": true,
+  "js/ts.implicitProjectConfig.checkJs": true
+}

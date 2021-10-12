@@ -14,7 +14,7 @@ describe("clue5", () => {
         propertyDetails: {
           bathrooms: 3,
           bedrooms: 2,
-          escapeTunnel: false
+          escapeTunnel: true
         }
       }
     }
@@ -28,6 +28,8 @@ describe("clue5", () => {
     escapeTunnel: false
   }
 
+  const noEscape = { details: { description: { propertyDetails: { escapeTunnel: false } } } }
+
   describe('1. hasEscapeTunnel', () => {
     const hasEscapeTunnel = window['hasEscapeTunnel']
     it('returns a boolean', () => {
@@ -37,8 +39,7 @@ describe("clue5", () => {
       chai.assert.isTrue(hasEscapeTunnel(propertyTest))
     })
     it('returns false if the property does not have an escape tunnel', () => {
-      const noEscape = { ...propertyTest }
-      noEscape.details.propertyDetails.escapeTunnel = false
+
       chai.assert.isFalse(hasEscapeTunnel(noEscape))
     })
   })
@@ -51,10 +52,12 @@ describe("clue5", () => {
       chai.assert.isTrue(hasEscapeTunnelSafe(propertyTest))
     })
     it('returns false if the property does not have an escape tunnel', () => {
-      chai.assert.isFalse(hasEscapeTunnelSafe({ ...propertyTest, details: { ...propertyTest.details, escapeTunnel: false } }))
+      chai.assert.isFalse(hasEscapeTunnelSafe(noEscape))
     })
     it('returns undefined if the property has no description', () => {
-      chai.assert.isUndefined(hasEscapeTunnelSafe({ ...propertyTest, details: { ...propertyTest.details, description: undefined } }))
+      chai.assert.isUndefined(
+        hasEscapeTunnelSafe({ details: { description: undefined } })
+      )
     })
   })
   describe('3. Print Property', () => {
@@ -63,7 +66,9 @@ describe("clue5", () => {
       chai.assert.isString(printProperty(propertyTest))
     })
     it('returns a string in the proper format including all keys and values', () => {
-      chai.assert.equal(printProperty(simplePropertyTest), 'name: Bermuda; location: 32.301008, -64.757812; bathrooms: 3; bedrooms: 2; escapeTunnel: false;')
+      chai.assert.equal(
+        printProperty(simplePropertyTest).trim(),
+        'name: Bermuda; location: 32.301008, -64.757812; bathrooms: 3; bedrooms: 2; escapeTunnel: false;')
     })
   })
 })

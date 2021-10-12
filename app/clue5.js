@@ -55,9 +55,10 @@ const simplePropertyExample = {
   bedrooms: 3,
   escapeTunnel: true
 }
-// Our older printer cant handle this data structure, we need it to be a string. 
 
-// 3. Write a function that takes in a simple property object and returns a string that is a comma separated list of the property names and values (hint: use a for in loop)
+// Our older printer cant handle this data structure, we need this data converted into a template string. 
+
+// 3. Write a function that takes in a simple property object and returns a template string that is a semi-colon separated list of the property names and values (hint: use a for in loop)
 // Example: 
 // input: simplePropertyExample
 // output: 'name: Maldives; location: -0.612875, 73.094959; bathrooms: 2; bedrooms: 3; escapeTunnel: true;'

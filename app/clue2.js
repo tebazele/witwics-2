@@ -4,7 +4,7 @@
 
 // First things first we need to narrow down portions of our files to get the people who are in the area, our filing system is a mess though, we need to know which cabinet the files are in.
 
-// 1. Write function that will take in an array and and an element that will return the elements index within the array, if it is not found throw an error
+// 1. Write function that will take in an array and and an element that will return the elements index within the array
 // EXAMPLE:
 // input: ['Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria'], 'Australia'
 // output: 4
@@ -23,7 +23,7 @@ function returnIndex(arr, str) {
 // output: true
 
 function hasName(arr, name) {
-
+  // TODO your code here
 }
 
 //-------------------------------------------
@@ -69,11 +69,15 @@ let theBand = {
   }]
 }
 
+function bandMemberDetails(name) {
+  // TODO YOUR CODE HERE
+}
+
 //-------------------------------------------
 
 // Looks like we just missed them and they are trying to catch a flight out of here, we have their bank account and can see all the transactions, but don't know where they are headed. We need you to check the potential destinations and whether or not they are flying first class. 
 
-// 5. All Flights are from Melbourne. Write a function that will use the following data to return the cost of flights from boise to a neighboring city, by default return the standard cost unless firstClass is set to true
+// 5. All Flights are from Melbourne. Write a function that will use the following data to return the cost of flights from MEL to a neighboring city, by default return the standard cost unless firstClass is set to true
 // Example;
 // input: 'LAX', true
 // output: 2200
@@ -102,55 +106,5 @@ let flights = [{
 }]
 
 function flightCost(destination, firstClass) {
-  // TODO YOUR CODE HERE
-}
-
-
-
-
-
-
-
-
-
-
-// SECTION EXTRAS
-
-
-
-
-
-// 1. Within the factorials function, write a loop that begins at 1 and multiplies every consecutive
-// number up to and including the given number(num). Return the total after the loop completes.
-// Example:
-// input: 4
-// output: 24
-// 1*2*3*4 = 24
-
-function factorials(num) {
-
-}
-
-// ------------------------------------------
-
-// 2. Write a function that sums up all of the numbers in a range
-// Example:
-// input: 2, 6
-// output: 20
-
-function rangeTotal(n1, n2) {
-  // TODO YOUR CODE HERE
-}
-
-// ------------------------------------------
-
-
-// 3. Write a function that will take in a starting number, ending number, and a divisor. Iterate
-// over the range of the numbers and rtuen how many numbers can be divided by the divisor.
-// Example:
-// input: 15, 20, 5
-// output: 2
-
-function rangeDivisor(start, end, divisor) {
   // TODO YOUR CODE HERE
 }

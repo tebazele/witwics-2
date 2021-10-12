@@ -7,7 +7,7 @@ const OFF = 0
 module.exports = {
   root: true,
   env: {
-    node: true
+    browser: true
   },
   parserOptions: {
     ecmaVersion: 2020
