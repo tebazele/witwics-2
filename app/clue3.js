@@ -3,8 +3,8 @@
 // We know within the system that the getaway cars plate has 7 characters, lets start by reducing all the plates in the system to only include ones with 7 characters, and while we are at it, lets optimize the process in case we ever need it again, so it can take in any plate length
 
 // 1. Write a function that will take in an array and return an array where all of the strings have 7 characters. (hint: filter)
-// Example: 
-// input: 
+// Example:
+// input:
 /*
   [
     'IBSTOLEN',
@@ -16,7 +16,7 @@
     'ETMYDST'
   ]
 */
-// output: 
+// output:
 /*
   [
     'NOTMINE', 
@@ -27,6 +27,8 @@
 
 function platesByCharacters(arr) {
   // TODO YOUR CODE HERE
+  let filteredArray = arr.filter((plate) => plate.length == 7);
+  return filteredArray;
 }
 
 // --------------------------------
@@ -36,7 +38,7 @@ function platesByCharacters(arr) {
 // 2. Write a function that will take in an array of objects and filter OUT to KEEP all plates that have at least the total numberOfCitations.
 
 // Example:
-// input: 
+// input:
 /* [
     {plate: 'IBSTOLEN', citations: 2 },
     {plate: 'NOTMINE', citations: 1 },
@@ -48,7 +50,7 @@ function platesByCharacters(arr) {
    ],
    3
 */
-// output: 
+// output:
 /* [
     {plate: 'DRIVNFAST', citations: 3 }, 
     {plate: 'GETAWAY', citations: 6 }, 
@@ -58,6 +60,10 @@ function platesByCharacters(arr) {
 
 function filterPlatesByCitations(plates, numberOfCitations) {
   // TODO YOUR CODE HERE
+  let filteredArray = plates.filter(
+    (plateObject) => plateObject.citations >= numberOfCitations
+  );
+  return filteredArray;
 }
 
 // --------------------------------
@@ -71,6 +77,8 @@ function filterPlatesByCitations(plates, numberOfCitations) {
 
 function sortPlates(arr) {
   // TODO YOUR CODE HERE
+  // NOTE sort is destructive -- it changes the original array
+  return arr.sort();
 }
 
 // --------------------------------
@@ -81,14 +89,14 @@ function sortPlates(arr) {
 
 // Example:
 
-// input: 
+// input:
 /* [
     {country: 'CAN', plate:'NOTMINE', citations: 2},
     {country: 'USA', plate:'GETAWAY', citations: 1},
     {country: 'AUS', plate:'ETMYDST', citations: 13}
    ]
 */
-// output: 
+// output:
 /*
   [
     {country: 'AUS', plate:'ETMYDST', citations: 13},
@@ -99,25 +107,27 @@ function sortPlates(arr) {
 
 function sortPlatesByCitations(arr) {
   // TODO YOUR CODE HERE
+  // NOTE a and b represent the elements being sorted two at a time
+  return arr.sort((a, b) => b.citations - a.citations);
 }
 
 // --------------------------------
 
 // Hmm... upon further investigation it looks like we have plates from all over the world here, might be easier if we ordered them by their Country.
 
-// 5. Write a function that will take in an array of objects and sort them by the value of their country property. 
+// 5. Write a function that will take in an array of objects and sort them by the value of their country property.
 
 // hint: Sorting by strings JavaScript
 
 // Example:
-// input: 
+// input:
 /* [
     { country: 'AUS', plate: 'NOTMINE' },
     { country: 'USA', plate: 'GETAWAY' },
     { country: 'CAN', plate: 'ETMYDST' }
    ]
 */
-// output: 
+// output:
 /*
   [
     { country: 'AUS', plate: 'NOTMINE' },
@@ -128,4 +138,16 @@ function sortPlatesByCitations(arr) {
 
 function sortPlatesByCountry(arr) {
   // TODO YOUR CODE HERE
+  return arr.sort((a, b) => {
+    const countryA = a.country;
+    const countryB = b.country;
+
+    if (countryA < countryB) {
+      return -1;
+    }
+    if (countryA > countryB) {
+      return 1;
+    }
+    return 0;
+  });
 }

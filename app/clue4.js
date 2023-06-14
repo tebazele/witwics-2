@@ -2,10 +2,10 @@
 
 // We found a partial receipt we think was for a disguise. However, we only have the price of the item, not the name, and we only have the after tax price. We need to take all items from the store, and add tax to them to see if we find a match.
 
-// 1. Write a function that will take in an array of prices and a tax rate, and return an array of those prices after the tax has been added. 
+// 1. Write a function that will take in an array of prices and a tax rate, and return an array of those prices after the tax has been added.
 
 // **Hint:** use the map method
-// Multiply the cost of an item or service by the sales tax in order to find out the total tax amount, then add that value to the base cost. 
+// Multiply the cost of an item or service by the sales tax in order to find out the total tax amount, then add that value to the base cost.
 
 // Example:
 // Input: [10, 15, 20], 0.05
@@ -13,6 +13,8 @@
 
 function afterTax(arr, tax) {
   // TODO YOUR CODE HERE
+  let mappedArray = arr.map((cost) => cost * tax + cost);
+  return mappedArray;
 }
 
 // ---------------------------------------------
@@ -22,21 +24,29 @@ function afterTax(arr, tax) {
 // 2. Write a function that will map over an array of arrays to return an array of objects. Set the first item in the inner arrays to the name, and the second to price.
 
 // Example:
-// Input: 
+// Input:
 const exampleSet = [
   ["Cowboy", 10],
   ["Nun", 15],
-  ["Scarecrow", 20]
-]
-// Output: 
+  ["Scarecrow", 20],
+];
+// Output:
 const exampleOutput = [
   { name: "Cowboy", price: 10 },
   { name: "Nun", price: 15 },
-  { name: "Scarecrow", price: 20 }
-]
+  { name: "Scarecrow", price: 20 },
+];
 
 function convertToObjects(arr) {
   // TODO YOUR CODE HERE
+  let mappedArray = arr.map((innerArray) => {
+    let result = {};
+    result.name = innerArray[0];
+    result.price = innerArray[1];
+    return result;
+  });
+  // console.log(mappedArray);
+  return mappedArray;
 }
 
 // ---------------------------------------------
@@ -50,6 +60,8 @@ function convertToObjects(arr) {
 
 function joinArrays(arr1, arr2) {
   // TODO YOUR CODE HERE
+  // return arr1.concat(arr2);
+  return [...arr1, ...arr2];
 }
 
 // ---------------------------------------------
@@ -58,14 +70,19 @@ function joinArrays(arr1, arr2) {
 
 // 4. Write a function that will take in an array of items and return the total of their prices. (Hint: use the reduce method)
 // Example:
-// Input: 
+// Input:
 const exampleTotal = [
   { name: "Cowboy", price: 10 },
   { name: "Nun", price: 15 },
-  { name: "Scarecrow", price: 20 }
-]
+  { name: "Scarecrow", price: 20 },
+];
 // Output: 35
 
 function totalReceipt(arr) {
   // TODO YOUR CODE HERE
+  let sumPrices = arr.reduce(
+    (accumulator, currentElement) => accumulator + currentElement.price,
+    0
+  );
+  return sumPrices;
 }

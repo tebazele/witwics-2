@@ -1,28 +1,28 @@
 // Having found everything else we now need to figure out the location of Carmen's hideout
 
-
 // First we need to access the properties that are known to be hideouts within our complex map system, here is an example of one of the fairly complex objects from that system
 
 const propertyExample = {
-  name: 'Maldives',
+  name: "Maldives",
   location: {
     x: -0.612875,
-    y: 73.094959
+    y: 73.094959,
   },
-  amenities: ['pool', 'gym', 'restaurant'],
+  amenities: ["pool", "gym", "restaurant"],
   details: {
     population: 540542,
     area: 115.8,
     description: {
-      history: 'The Maldives is a small country in South Asia, located in the Arabian Sea. It is the southernmost country in the Indian Ocean. It is the only country in the world with a national park.',
+      history:
+        "The Maldives is a small country in South Asia, located in the Arabian Sea. It is the southernmost country in the Indian Ocean. It is the only country in the world with a national park.",
       propertyDetails: {
         bathrooms: 2,
         bedrooms: 3,
-        escapeTunnel: true
-      }
-    }
-  }
-}
+        escapeTunnel: true,
+      },
+    },
+  },
+};
 
 // We know Carmen is a slippery one, so she will want to make sure she is hiding somewhere that has an escape tunnel.
 
@@ -30,8 +30,12 @@ const propertyExample = {
 
 function hasEscapeTunnel(property) {
   // TODO write code here
+  if (property.details.description.propertyDetails.escapeTunnel) {
+    return true;
+  } else {
+    return false;
+  }
 }
-
 
 // ----------------------------------------
 
@@ -41,28 +45,40 @@ function hasEscapeTunnel(property) {
 
 function hasEscapeTunnelSafe(property) {
   // TODO write code here
+  return property?.details?.description?.propertyDetails?.escapeTunnel;
 }
-
 
 // ----------------------------------------
 
 // alright we think we have the property we are looking for, but we need to print off all the details about it, and we have reduced them to only the information we need to know. The new property objects look like this:
 
 const simplePropertyExample = {
-  name: 'Maldives',
-  location: '-0.612875, 73.094959',
+  name: "Maldives",
+  location: "-0.612875, 73.094959",
   bathrooms: 2,
   bedrooms: 3,
-  escapeTunnel: true
-}
+  escapeTunnel: true,
+};
 
-// Our older printer cant handle this data structure, we need this data converted into a template string. 
+// Our older printer cant handle this data structure, we need this data converted into a template string.
 
 // 3. Write a function that takes in a simple property object and returns a template string that is a semi-colon separated list of the property names and values (hint: use a for in loop)
-// Example: 
+// Example:
 // input: simplePropertyExample
 // output: 'name: Maldives; location: -0.612875, 73.094959; bathrooms: 2; bedrooms: 3; escapeTunnel: true;'
 
 function printProperty(property) {
   // TODO write code here
+  let templateString = "";
+  let objEntries = Object.entries(property);
+  // console.log(objEntries);
+  // console.log(`
+  // ${objEntries[0][0]}: ${objEntries[0][1]};
+  // ${objEntries[1][0]}: ${objEntries[1][1]};`);
+
+  for (let i = 0; i < objEntries.length; i++) {
+    templateString += `${objEntries[i][0]}: ${objEntries[i][1]}; `;
+  }
+  console.log(templateString);
+  return templateString;
 }
