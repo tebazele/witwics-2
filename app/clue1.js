@@ -8,9 +8,8 @@
 
 function stringBreaker(str) {
   // TODO YOUR CODE HERE
+  return str.split(" ");
 }
-
-
 
 // 2. Given an array, move the element at the first position (0) to the last position in the array. Return the modified array.
 // Example:
@@ -19,8 +18,14 @@ function stringBreaker(str) {
 
 function rearranger(arr) {
   // TODO YOUR CODE HERE
+  // console.log(arr);
+  let firstElement = arr.shift();
+  // arr.unshift(firstElement)
+  // console.log(firstElement);
+  arr.push(firstElement);
+  // console.log(arr);
+  return arr;
 }
-
 
 // Hmm... it seems like that was the opposite of what we might have needed, lets try to reverse that process
 
@@ -30,8 +35,10 @@ function rearranger(arr) {
 // output: ['sentence.', 'This', 'is', 'a', 'split' ]
 function reverseRearranger(arr) {
   // TODO YOUR CODE HERE
+  let lastElement = arr.pop();
+  arr.unshift(lastElement);
+  return arr;
 }
-
 
 // Looks like we almost got it, but it as it turns out most of this message is nonsense, we need to be able to get a copy of only a portion of the message
 // 4. write a function that will take in an array as well as two indexes (start and end), and return the portion of the array within those indexes
@@ -40,6 +47,7 @@ function reverseRearranger(arr) {
 // output: ['is', 'a', 'split']
 function arrayPortion(arr, start, end) {
   // TODO YOUR CODE HERE
+  return arr.slice(start, end + 1);
 }
 
 // Final step we have the message broken up into words, we need to put it back into a normal sentence
@@ -50,4 +58,6 @@ function arrayPortion(arr, start, end) {
 
 function arrayToString(arr) {
   // TODO YOUR CODE HERE
+  console.log(arr);
+  return arr.join(" ");
 }

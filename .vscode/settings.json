@@ -3,5 +3,25 @@
   "editor.wordWrapColumn": 80,
   "editor.bracketPairColorization.enabled": true,
   "editor.codeLens": true,
-  "js/ts.implicitProjectConfig.checkJs": true
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#0aaa35",
+    "activityBar.background": "#0aaa35",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#622cf3",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#0aaa35",
+    "statusBar.background": "#077a26",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#0aaa35",
+    "statusBarItem.remoteBackground": "#077a26",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#077a26",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#077a2699",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#077a26"
 }

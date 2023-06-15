@@ -11,6 +11,7 @@
 
 function returnIndex(arr, str) {
   // TODO your code here
+  return arr.findIndex((country) => country == str);
 }
 
 //-------------------------------------------
@@ -18,12 +19,13 @@ function returnIndex(arr, str) {
 // Now that we have the right cabinet, we need to see if the name is within that file system, a simple bool value will suffice, the interns can locate the actual file later.
 
 // 2. Write a function that will take in an array and a string, it will return a boolean value if the string is within the array.
-// Example: 
+// Example:
 // input: ['Martin', 'Grace', 'Armando', 'Joe', 'Susan', 'Ted'], 'Joe'
 // output: true
 
 function hasName(arr, name) {
   // TODO your code here
+  return arr.includes(name);
 }
 
 //-------------------------------------------
@@ -36,14 +38,27 @@ function hasName(arr, name) {
 // output: {id: 17, name: 'St. MaryLou de la Playa Carmen'}
 //Example:
 // input: 1000
-// output: { error: "No user with that id." } 
+// output: { error: "No user with that id." }
 
-let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'Peter' },
-{ id: 17, name: 'St. MaryLou de la Playa Carmen' }, { id: 51, name: 'Doug' },
-{ id: 881, name: 'Paul' }, { id: 0, name: 'Jon' }, { id: 999, name: 'Timma' }]
+let staff = [
+  { id: 1, name: "Jon" },
+  { id: 2, name: "Yuli" },
+  { id: 21, name: "Peter" },
+  { id: 17, name: "St. MaryLou de la Playa Carmen" },
+  { id: 51, name: "Doug" },
+  { id: 881, name: "Paul" },
+  { id: 0, name: "Jon" },
+  { id: 999, name: "Timma" },
+];
 
 function findById(id) {
   // TODO YOUR CODE HERE
+
+  let foundPerson = staff.find((person) => person.id == id);
+  if (!foundPerson) {
+    return { error: "No user with that id." };
+  }
+  return foundPerson;
 }
 
 //-------------------------------------------
@@ -57,54 +72,76 @@ function findById(id) {
 
 let theBand = {
   homeCity: "Melbourne",
-  members: [{
-    name: 'Johnny P',
-    instrument: 'sax'
-  }, {
-    name: 'River',
-    instrument: 'drums'
-  }, {
-    name: 'Kris',
-    instrument: 'guitar'
-  }]
-}
+  members: [
+    {
+      name: "Johnny P",
+      instrument: "sax",
+    },
+    {
+      name: "River",
+      instrument: "drums",
+    },
+    {
+      name: "Kris",
+      instrument: "guitar",
+    },
+  ],
+};
 
 function bandMemberDetails(name) {
   // TODO YOUR CODE HERE
+  let foundMember = theBand.members.find((member) =>
+    member.name.includes(name)
+  );
+  return (
+    foundMember.name + " is in the band and plays the " + foundMember.instrument
+  );
 }
 
 //-------------------------------------------
 
-// Looks like we just missed them and they are trying to catch a flight out of here, we have their bank account and can see all the transactions, but don't know where they are headed. We need you to check the potential destinations and whether or not they are flying first class. 
+// Looks like we just missed them and they are trying to catch a flight out of here, we have their bank account and can see all the transactions, but don't know where they are headed. We need you to check the potential destinations and whether or not they are flying first class.
 
 // 5. All Flights are from Melbourne. Write a function that will use the following data to return the cost of flights from MEL to a neighboring city, by default return the standard cost unless firstClass is set to true
 // Example;
 // input: 'LAX', true
 // output: 2200
 
-let flights = [{
-  from: 'MEL',
-  to: 'LAX',
-  prices: {
-    standard: 500,
-    firstClass: 2200
-  }
-}, {
-  from: 'MEL',
-  to: 'SEA',
-  prices: {
-    standard: 800,
-    firstClass: 1200
-  }
-}, {
-  from: 'MEL',
-  to: 'CAN',
-  prices: {
-    standard: 750,
-    firstClass: 6200
-  }
-}]
+let flights = [
+  {
+    from: "MEL",
+    to: "LAX",
+    prices: {
+      standard: 500,
+      firstClass: 2200,
+    },
+  },
+  {
+    from: "MEL",
+    to: "SEA",
+    prices: {
+      standard: 800,
+      firstClass: 1200,
+    },
+  },
+  {
+    from: "MEL",
+    to: "CAN",
+    prices: {
+      standard: 750,
+      firstClass: 6200,
+    },
+  },
+];
 
 function flightCost(destination, firstClass) {
   // TODO YOUR CODE HERE
+  let foundFlight = flights.find(
+    (flightObject) => flightObject.to == destination
+  );
+  if (firstClass) {
+    return foundFlight.prices.firstClass;
+  } else {
+    return foundFlight.prices.standard;
+  }
 }
